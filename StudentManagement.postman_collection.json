@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "350e1c89-7197-4cdd-8f54-222e55f7a2c0",
+		"name": "StudentManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19419430"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"dateOfBirth\": \"2000-05-15\",\r\n  \"gender\": \"Male\",\r\n  \"studentCode\": \"STD12345\",\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Permanent\",\r\n      \"street\" : \"Boston road\",\r\n      \"city\": \"New York\",\r\n      \"state\": \"NY\",\r\n      \"zipCode\": \"10001\"\r\n    },\r\n    {\r\n      \"addressLine\": \"456 College Ave\",\r\n      \"city\": \"Boston\",\r\n      \"state\": \"MA\",\r\n      \"zipCode\": \"02115\",\r\n      \"type\": \"Current\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/students/admit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"students",
+						"admit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/admin/courses/add",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"courseName\": \"Java Backend Development\",\r\n  \"description\": \"Covers Spring Boot, APIs, and Microservices\",\r\n  \"courseType\": \"Full-Time\",\r\n  \"duration\": \"3 months\",\r\n  \"topics\": [\"Spring Boot\", \"JPA\", \"REST APIs\", \"Microservices\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/courses/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"courses",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/admin/courses/assign?studentId=4&courseId=5",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/courses/assign?studentId=4&courseId=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"courses",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "4"
+						},
+						{
+							"key": "courseId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/admin/students/search?name=John Doe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/students/search?name=John Doe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"students",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John Doe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/admin/students/by-course?courseId=5",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/students/by-course?courseId=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"students",
+						"by-course"
+					],
+					"query": [
+						{
+							"key": "courseId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Student/2/update-profile",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"updated@example.com\",\r\n  \"mobile\": \"9876543210\",\r\n  \"fatherName\": \"Mr. Doe\",\r\n  \"motherName\": \"Mrs. Doe\",\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"current\",\r\n      \"city\": \"Pune\",\r\n      \"state\": \"MH\",\r\n      \"zipCode\": \"411001\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Student/2/update-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Student",
+						"2",
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Student/1/courses",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Student/1/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Student",
+						"1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/admin/students/admit",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"dateOfBirth\": \"2000-05-15\",\r\n  \"gender\": \"Male\",\r\n  \"studentCode\": \"STD12345\",\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Permanent\",\r\n      \"street\" : \"Boston road\",\r\n      \"city\": \"New York\",\r\n      \"state\": \"NY\",\r\n      \"zipCode\": \"10001\"\r\n    },\r\n    {\r\n      \"addressLine\": \"456 College Ave\",\r\n      \"city\": \"Boston\",\r\n      \"state\": \"MA\",\r\n      \"zipCode\": \"02115\",\r\n      \"type\": \"Current\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/students/admit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"students",
+						"admit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
