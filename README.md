@@ -46,3 +46,8 @@ This project is a backend system for managing students and courses, built using 
    git clone https://github.com/yourusername/StudentManagement.git
    cd StudentManagement
 
+### API documentation for managing students and courses
+http://localhost:8080/swagger-ui/index.html
+
+### Postman endpoints are attached to test
+
